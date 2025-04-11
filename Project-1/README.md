@@ -1,6 +1,6 @@
 # Results
 
-# hash-00
+## hash-00
 | Optimization | Real Time | User Time | System Time | Memory (KB) | Throughput |
 | --- | --- | --- | --- | --- | --- |
 | none | 351.48 | 341.74 | 6.03 | 2900 | ? |
@@ -8,7 +8,7 @@
 | -02 and -funroll-loops | 335.70 | 329.78 | 4.16 | 2888 | ? |
 | -03 and -funroll-loops | 335.45 | 329.51 | 4.16 | 2880 | ? |
 
-# hash-01
+## hash-01
 | Optimization | Real Time | User Time | System Time | Memory (KB) | Throughput | Improvement Over hash-00 |
 | --- | --- | --- | --- | --- | --- | --- |
 | none | 18.99 | 16.41 | 1.65 | 2900 | ? | ? |
