@@ -39,3 +39,20 @@
 | -02 | 7.25 | 6.63 | 0.53 | 5012376 | 137931.03 | 46.65 |
 | -02 and -funroll-loops | 7.13 | 6.59 | 0.47 | 5012368 | 140252.45 | 47.08 |
 | -03 and -funroll-loops | 7.18 | 6.63 | 0.46 | 5012368 | 139275.76 | 46.72 |
+
+# Questions
+*1. What operation do you think accounts for most of hash-00's runtime?*
+I think that the operation of converting each data item from ASCII to binary is what accounts for most of hash-00's runtime,
+along with the fact that it does it one at a time.
+   
+*2. hash-01 and hash-02 both dynamically allocate memory for each hash computation.  Is there much difference time-wise between their two allocation methods?*
+There does not seem to be much difference time-wise between the two allocation methods for hash-01 and hash-02. Without optimization, hash-01 is only a few seconds faster than hash-02, whereas with optimization, hash-02 is a bit faster, but not by that much. 
+   
+*3. hash-03 avoids the allocation by using a fixed-size array.  Is there an appreciable speed difference?*
+There is not an appreciable speed difference. The times are all very close to each other, especially with the optimization options.
+   
+*4. Why is hash-04's memory usage so much larger than any of the other versions?  Hint: recall when we discussed how the operating system reads a file and makes it available to an application.  Specifically, the O/S will transfer data from disk to its own memory, and then copy from there into buffers provided by the application.  In the memory map case, the O/S is merely sharing the copy of the file's data that is in its (the O/S's) memory, and not making an additional copy from its memory into memory only in the application.*
+hash-04's memory usage is much larger than any of the other programs because it memory maps the entire file to the program's address space instead of having the data in the O/S's memory and then copying parts of it into the program from there. 
+   
+*5. What other compiler options did you try, and did they help at all?*
+I tried the options -02, -02 with -funroll-loops, and -03 with -funroll-loops. They all helped cut down the base runtime to around half for most of the programs, except for hash-00, which was reduced by around 15 seconds. The options -02 with -funroll-loops and -03 with -funroll-loops had very similar times compared to the rest and were the fastest overall. 
