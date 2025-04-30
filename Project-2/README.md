@@ -23,3 +23,8 @@
 Question: Notice that there is a maximum speed-up factor, but not necessarily using the most threads. Make a guess (i.e., write a short paragraph) as to why you think more threads aren’t necessary better. Here’s a hint: think about a group of people waiting to go through a turnstile (like at BART or Disney World). Are more people able to go through it just because there are more people?
 
 Answer: I think that more threads aren't neccessarily better because the system has a limited amount of resources it can use for those threads, meaning there is a limit to how fast it can go. If there are more threads, then there are also probably more resources that need to be used in order to have the threads running, which would also impact the speed. My guess is that the more threads there are, the weaker each one is since the resources need to be shared across all of them.
+
+
+Question: Do you think it’s possible to get “perfect scaling” — meaning that the (1-p) terms is zero?
+
+Answer: If the 1 - p term is 0, that means that p would need to be equal to 1, which would mean that the entire program is parallelized and that there is no serial code. I think that this might not be possible because there is probably some serial code in every program. 
