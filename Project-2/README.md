@@ -1,3 +1,4 @@
+# Results
 |Thread<br>Count|Wall Clock<br>Time|User Time|System Time|Speedup|
 |:--:|--:|--:|--:|:--:|
 |1|14.58|13.93| 0.49|1.00|
@@ -18,16 +19,8 @@
 |72| 2.00|18.20|15.72| 7.29|
 |80| 2.00|17.79|17.52| 7.29|
 
+
 ![Speedup Graph](<Speedup Graph.png>)
-
-**Question:** Notice that there is a maximum speed-up factor, but not necessarily using the most threads. Make a guess (i.e., write a short paragraph) as to why you think more threads aren’t necessary better. Here’s a hint: think about a group of people waiting to go through a turnstile (like at BART or Disney World). Are more people able to go through it just because there are more people?
-
-**Answer:** I think that more threads aren't neccessarily better because the system has a limited amount of resources it can use for those threads, meaning there is a limit to how fast it can go. If there are more threads, then there are also probably more resources that need to be used in order to have the threads running, which would also impact the speed. My guess is that the more threads there are, the weaker each one is since the resources need to be shared across all of them.
-
-
-**Question:** Do you think it’s possible to get “perfect scaling” — meaning that the (1-p) terms is zero?
-
-**Answer:** If the 1 - p term is 0, that means that p would need to be equal to 1, which would mean that the entire program is parallelized and that there is no serial code. I think that this might not be possible because there is probably some serial code in every program. 
 
 
 **Timing Results from timed.cpp:**
@@ -38,11 +31,19 @@ results output 4.97e-07 s
 
 main program 7.331906097 s
 
+# Questions
+
+**1. Notice that there is a maximum speed-up factor, but not necessarily using the most threads. Make a guess (i.e., write a short paragraph) as to why you think more threads aren’t necessary better. Here’s a hint: think about a group of people waiting to go through a turnstile (like at BART or Disney World). Are more people able to go through it just because there are more people?**
+
+I think that more threads aren't neccessarily better because the system has a limited amount of resources it can use for those threads, meaning there is a limit to how fast it can go. If there are more threads, then there are also probably more resources that need to be used in order to have the threads running, which would also impact the speed. My guess is that the more threads there are, the weaker each one is since the resources need to be shared across all of them.
 
 
-**Question:** For your own timings, compute your expected speed-up for 16 cores.
+**2. Do you think it’s possible to get “perfect scaling” — meaning that the (1-p) terms is zero?**
 
-**Answer:**
+If the 1 - p term is 0, that means that p would need to be equal to 1, which would mean that the entire program is parallelized and that there is no serial code. I think that this might not be possible because there is probably some serial code in every program.
+
+
+**3. For your own timings, compute your expected speed-up for 16 cores.**
 
 Determine serial code (s):
 
@@ -58,6 +59,7 @@ $$ speedup = \frac{1}{1 - 0.993 + \frac{0.993}{16}} = 14.480 $$
 
 The expected speed-up for 16 cores is 14.480, or the program should go about 14 times as fast.
 
-**Question:** In reviewing the graph of speed-ups to number of threads, note that we get pretty linear (when you plot the dots, they’re pretty close to being a line) speed-up. What’s the slope of that line? (Pick two values, like for one and seven threads, and do the rise-over-run thing you learned in Algebra). Does that linear trend continue as we add more threads? What do you think causes the curve to “flatten out” when we use large thread counts?
 
-**Answer:** For 1 and 7 threads, the slope is 0.643. As more threads are added, the slope gets closer to being a horizontal line. For example, the slope for 16 and 80 threads is 0.004. The reason the line flattens out when large thread counts are used might be because the computer doesn't have the capability to run all of the threads at once at full speed, meaning there is a point where no matter how many more threads you run, it will not get significantly faster.  
+**4. In reviewing the graph of speed-ups to number of threads, note that we get pretty linear (when you plot the dots, they’re pretty close to being a line) speed-up. What’s the slope of that line? (Pick two values, like for one and seven threads, and do the rise-over-run thing you learned in Algebra). Does that linear trend continue as we add more threads? What do you think causes the curve to “flatten out” when we use large thread counts?**
+
+For 1 and 7 threads, the slope is 0.643. As more threads are added, the slope gets closer to being a horizontal line. For example, the slope for 16 and 80 threads is 0.004. The reason the line flattens out when large thread counts are used might be because the computer doesn't have the capability to run all of the threads at once at full speed, meaning there is a point where no matter how many more threads you run, it will not get significantly faster.  
