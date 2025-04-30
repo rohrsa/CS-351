@@ -60,6 +60,4 @@ The expected speed-up for 16 cores is 14.480, or the program should go about 14 
 
 **Question:** In reviewing the graph of speed-ups to number of threads, note that we get pretty linear (when you plot the dots, they’re pretty close to being a line) speed-up. What’s the slope of that line? (Pick two values, like for one and seven threads, and do the rise-over-run thing you learned in Algebra). Does that linear trend continue as we add more threads? What do you think causes the curve to “flatten out” when we use large thread counts?
 
-**Answer:** 
-
-For 1 and 7 threads, the slope is 0.643. As more threads are added, the slope gets closer to being a horizontal line. For example, the slope for 16 and 80 threads is 0.004. The reason the line flattens out when large thread counts are used might be because the computer doesn't have the capability to run all of the threads at once at full speed, meaning there is a point where no matter how many more threads you run, it will not get significantly faster.  
+**Answer:** For 1 and 7 threads, the slope is 0.643. As more threads are added, the slope gets closer to being a horizontal line. For example, the slope for 16 and 80 threads is 0.004. The reason the line flattens out when large thread counts are used might be because the computer doesn't have the capability to run all of the threads at once at full speed, meaning there is a point where no matter how many more threads you run, it will not get significantly faster.  
