@@ -20,11 +20,40 @@
 
 ![Speedup Graph](<Speedup Graph.png>)
 
-Question: Notice that there is a maximum speed-up factor, but not necessarily using the most threads. Make a guess (i.e., write a short paragraph) as to why you think more threads aren’t necessary better. Here’s a hint: think about a group of people waiting to go through a turnstile (like at BART or Disney World). Are more people able to go through it just because there are more people?
+**Question:** Notice that there is a maximum speed-up factor, but not necessarily using the most threads. Make a guess (i.e., write a short paragraph) as to why you think more threads aren’t necessary better. Here’s a hint: think about a group of people waiting to go through a turnstile (like at BART or Disney World). Are more people able to go through it just because there are more people?
 
-Answer: I think that more threads aren't neccessarily better because the system has a limited amount of resources it can use for those threads, meaning there is a limit to how fast it can go. If there are more threads, then there are also probably more resources that need to be used in order to have the threads running, which would also impact the speed. My guess is that the more threads there are, the weaker each one is since the resources need to be shared across all of them.
+**Answer:** I think that more threads aren't neccessarily better because the system has a limited amount of resources it can use for those threads, meaning there is a limit to how fast it can go. If there are more threads, then there are also probably more resources that need to be used in order to have the threads running, which would also impact the speed. My guess is that the more threads there are, the weaker each one is since the resources need to be shared across all of them.
 
 
-Question: Do you think it’s possible to get “perfect scaling” — meaning that the (1-p) terms is zero?
+**Question:** Do you think it’s possible to get “perfect scaling” — meaning that the (1-p) terms is zero?
 
-Answer: If the 1 - p term is 0, that means that p would need to be equal to 1, which would mean that the entire program is parallelized and that there is no serial code. I think that this might not be possible because there is probably some serial code in every program. 
+**Answer:** If the 1 - p term is 0, that means that p would need to be equal to 1, which would mean that the entire program is parallelized and that there is no serial code. I think that this might not be possible because there is probably some serial code in every program. 
+
+
+**Timing Results from timed.cpp:**
+
+main program 0.048732523 s
+
+results output 4.97e-07 s
+
+main program 7.331906097 s
+
+
+
+**Question:** For your own timings, compute your expected speed-up for 16 cores.
+
+**Answer:**
+
+Determine serial code (s):
+
+$$ s = \frac{0.049 + 0.000000497}{7.332} = 0.007 $$
+
+Determine parallel code (p): 
+
+$$ p = 1 - s = 0.993 $$
+
+Use Amdahl’s law, $speedup = \frac{1}{1 - p + \frac{p}{n}}$, where p is the parallel code and n is the number of cores:
+
+$$ speedup = \frac{1}{1 - 0.993 + \frac{0.993}{16}} = 14.480 $$
+
+The expected speed-up for 16 cores is 14.480, or the program should go about 14 times as fast.
