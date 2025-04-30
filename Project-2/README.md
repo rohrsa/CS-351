@@ -18,4 +18,4 @@
 |72| 2.00|18.20|15.72| 7.29|
 |80| 2.00|17.79|17.52| 7.29|
 
-![Speedup Graph](Speedup Graph.png)
+![Speedup Graph](<Speedup Graph.png>)
