@@ -1,7 +1,6 @@
 # Contents
 
 [Triangle](triangle.html)
-[![Triangle](triangle.png)](triangle.html)
 
 [Circle](circle.html)
 
