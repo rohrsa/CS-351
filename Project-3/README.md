@@ -1,11 +1,11 @@
 # Contents
 
-[Triangle](triangle.html)
+[Triangle](triangle.html) : An outline of a yellow triangle.
 
-[Circle](circle.html)
+[Circle](circle.html): A yellow ten sided disk.
 
-[Star](star.html)
+[Star](star.html): A five pointed yellow star.
 
-[Rotating Star](starRotate.html)
+[Rotating Star](starRotate.html): A five pointed yellow star that rotates.
 
-[Colorful Star](starShine.html)
+[Colorful Star](starShine.html): A five pointed green and blue star that rotates.
