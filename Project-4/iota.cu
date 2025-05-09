@@ -14,10 +14,10 @@ const Count NumCheckValues = 500;
 //
 // --- Add your CUDA kernel implementation of iota here
 __global__
-void byTwo(size_t n, DataType* x) {
-	int i = blockIdx.x * blockDim.x + threadIdx.x;
-	if (i > n) return;
-	x[i] *= 2.0;
+void iota(size_t n, DataType* x, DataType startValue) {
+    size_t i = blockIdx.x * blockDim.x + threadIdx.x;
+    if (i > n) return;
+    x[i] = startValue + i //static_cast<DataType>(i);
 }
 //
 
