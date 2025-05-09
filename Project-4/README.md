@@ -34,6 +34,6 @@
 The results are not what I expected. I thought that CUDA would make it faster. The reason CUDA might not be a good solution for this problem might because there might be more work in setting things up for the GPU. In class, we learned that the memory in a discrete GPU has to be managed explicitly and that we need a staging buffer to send or receive data to the GPU's memory because it can't be written or read to directly. Setting these things up probably takes some time and since our program seems to be small, CUDA does not help increase the speed.
 
 # Part 2: Julia Set Results
-The Julia set below uses the starting point $z = (-0.4, 0.6)$, $ll = ()$, and $ur = ()$.
 ![Julia Set](<julia.png>)
+The Julia set above uses the starting point $z = (-0.4, 0.6)$, $ll = (-1.5, -1.5)$, and $ur = (1.5, 1.5)$.
 
