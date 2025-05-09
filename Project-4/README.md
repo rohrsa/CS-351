@@ -1,4 +1,6 @@
-# iota.gpu Results (CUDA)
+# Part 1: iota GPU and CPU Comparisons
+
+## iota.gpu Results (CUDA)
 |Vector<br>Length|Wall Clock<br>Time|User Time|System Time|
 |:--:|--:|--:|--:|
 |10| 0.30| 0.02| 0.28|
@@ -13,7 +15,7 @@
 |1000000000| 6.86| 1.55| 5.30|
 |5000000000|36.13| 7.26|28.87|
 
-# iota.cpu Results
+## iota.cpu Results
 |Vector<br>Length|Wall Clock<br>Time|User Time|System Time|
 |:--:|--:|--:|--:|
 |10| 0.00| 0.00| 0.00|
@@ -33,3 +35,4 @@ The results are not what I expected. I thought that CUDA would make it faster. T
 
 # Part 2: Julia Set Results
 ![Julia Set](<julia.png>)
+
