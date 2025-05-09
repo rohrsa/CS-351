@@ -170,8 +170,8 @@ using Complex = TComplex<float>;
 //
 
 inline __device__ float magnitude(const Complex& z) { return z.magnitude(); }
-inline __device__ float real(const Complex& z) { return z.x(); }
-inline __device__ float imag(const Complex& z) { return z.y(); }
+inline __device__ float z(const Complex& z) { return z.x(); }
+inline __device__ float y(const Complex& z) { return z.y(); }
 
 __global__
 void julia(Complex d, Complex center, Color* pixels) {
