@@ -170,8 +170,6 @@ using Complex = TComplex<float>;
 //
 
 inline __device__ float magnitude(const Complex& z) { return z.magnitude(); }
-inline __device__ float z(const Complex& z) { return z.x(); }
-inline __device__ float y(const Complex& z) { return z.y(); }
 
 __global__
 void julia(Complex d, Complex center, Color* pixels) {
@@ -183,18 +181,22 @@ void julia(Complex d, Complex center, Color* pixels) {
     //   you can pretty much drop in the CPU code, and then do the extra
     //   CUDA bits
 
-    size_t y = blockIdx.y * blockDim.y + threadIdx.y;
     size_t x = blockIdx.x * blockDim.x + threadIdx.x;
-    
-    if (y > Height || x > Width) return;
-    
-    Complex c(x*d.real(), y*d.imag());
+    size_t y = blockIdx.y * blockDim.y + threadIdx.y;
+
+    if (x >= Width || y >= Height) return;
+
+    Complex c(x * d.x, y * d.y);
     c -= center;
     Complex z;
     
     int iter = 0;
-    if (iter > MaxIterations || magnitude(z) > 2.0) return;
-    pixels[x + y * Width] = setColor(iter);
+    while (iter < MaxIterations && z.magnitude() < 2.0) {
+        z = z * z + c;
+        ++iter;
+    }
+
+    pixels[x + y * Width] = setColor(iter); 
 }
 
 //----------------------------------------------------------------------------
