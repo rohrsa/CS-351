@@ -188,7 +188,7 @@ void julia(Complex d, Complex center, Color* pixels) {
 
     Complex c(x * d.x, y * d.y);
     c -= center;
-    Complex z;
+    Complex z(1.0,1.0);
     
     int iter = 0;
     while (iter < MaxIterations && z.magnitude() < 2.0) {
