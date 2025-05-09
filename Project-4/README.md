@@ -1,3 +1,22 @@
+# Main Contents:
+
+[iota.cpp](iota.cpp) : Simple program using std::iota.
+
+[iota.cu](iota.cu) : Implements iota kernal in CUDA.
+
+[julia.cpp](julia.cpp) : Creates a Mandelbrot set.
+
+[julia.cu](julia.cu) : Uses CUDA to create a Julia set.
+
+[CudaCheck.h](CudaCheck.h) : Helper file to check for errors in CUDA functions.
+
+[runTrials.sh](runTrials.sh) : Automates test trials for the two iota programs.
+
+[Makefile](Makefile) : Compiles the programs.
+
+[julia.ppm](julia.ppm) : The generated Julia set.
+
+
 # Part 1: iota GPU and CPU Comparisons
 
 ## iota.gpu Results (CUDA)
@@ -32,6 +51,7 @@
 
 **Question: Are the results what you expected? Speculate as to why it looks like CUDA isn’t a great solution for this problem.**
 The results are not what I expected. I thought that CUDA would make it faster. The reason CUDA might not be a good solution for this problem might because there might be more work in setting things up for the GPU. In class, we learned that the memory in a discrete GPU has to be managed explicitly and that we need a staging buffer to send or receive data to the GPU's memory because it can't be written or read to directly. Setting these things up probably takes some time and since our program seems to be small, CUDA does not help increase the speed.
+
 
 # Part 2: Julia Set Results
 ![Julia Set](<julia.png>)
