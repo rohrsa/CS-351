@@ -17,7 +17,7 @@ __global__
 void iota(size_t n, DataType* x, DataType startValue) {
     size_t i = blockIdx.x * blockDim.x + threadIdx.x;
     if (i > n) return;
-    x[i] = startValue + i //static_cast<DataType>(i);
+    x[i] = startValue + i; //static_cast<DataType>(i);
 }
 //
 
